@@ -1,29 +1,29 @@
 variable "delivery_frequency" {
   default     = "TwentyFour_Hours"
   description = "The frequency with which AWS Config recurringly delivers configuration snapshots. May be one of One_Hour, Three_Hours, Six_Hours, Twelve_Hours, or TwentyFour_Hours"
-  type        = "string"
+  type        = string
 }
 
 variable "enable_recorder" {
   default     = true
   description = "Whether the configuration recorder should be enabled or disabled."
-  type        = "string"
+  type        = string
 }
 
 variable "expiration" {
   default     = 2555
   description = "The number of days to wait before expiring an object"
-  type        = "string"
+  type        = string
 }
 
 variable "log_bucket" {
   description = "The log bucket to write S3 logs to."
-  type        = "string"
+  type        = string
 }
 
 variable "name" {
   description = "The name to use when naming resources."
-  type        = "string"
+  type        = string
 }
 
 variable "input_parameters" {
@@ -64,7 +64,7 @@ variable "rules" {
 variable "rules_count" {
   default     = 8
   description = "The count of the items in the rules list"
-  type        = "string"
+  type        = string
 }
 
 variable "scopes" {
@@ -76,7 +76,7 @@ variable "scopes" {
   }
 
   description = "This is a map of rule names to scope maps. Each scope can have one or both of the following tuples: (compliance_resource_id, compliance_resource_types), (tag_key, tag_value). This map is merged with a default map in locals, with the values in this map overriding the defaults. Defines which resources can trigger an evaluation for the rules. If you do not specify a scope, evaluations are triggered when any resource in the recording group changes."
-  type        = "map"
+  type        = map
 }
 
 variable "source_identifiers" {
@@ -144,17 +144,16 @@ variable "source_identifiers" {
   }
 
   description = "A map of rule names to source identifiers. For AWS Config managed rules, a predefined identifier from a list. For example, IAM_PASSWORD_POLICY is a managed rule. This map will be merged with a default list in locals, with values in this list overriding those in locals"
-  type        = "map"
+  type        = map
 }
 
-variable "tags" {
-  default     = {}
+variable "common_tags" {
   description = "A mapping of tags to assign to created resources"
-  type        = "map"
+  type        = map
 }
 
 variable "transition_to_glacier" {
   default     = 30
   description = "The number of days to wait before transitioning an object to Glacier"
-  type        = "string"
+  type        = string
 }

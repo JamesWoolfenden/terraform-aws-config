@@ -1,7 +1,7 @@
 #Makefile
 ifdef OS
    RM   = $(powershell  -noprofile rm .\.terraform\modules\ -force -recurse)
-   BLAT = $(powershell  -noprofile rm .\.terraform\ -force -recurse)
+   BLAT = powershell  -noprofile rm .\.terraform\ -force -recurse
 else
    ifeq ($(shell uname), Linux)
       RM  = rm .terraform/modules/ -fr

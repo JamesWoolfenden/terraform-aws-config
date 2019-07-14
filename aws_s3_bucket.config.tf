@@ -25,7 +25,7 @@ resource "aws_s3_bucket" "config" {
     target_prefix = "s3/${local.config_name}/"
   }
 
-  tags = "${var.tags}"
+  tags = var.common_tags
 }
 
 resource "aws_s3_bucket_policy" "config" {

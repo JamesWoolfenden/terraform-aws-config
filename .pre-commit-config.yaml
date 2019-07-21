@@ -38,3 +38,7 @@ repos:
     rev: v0.17.0
     hooks:
     -   id: markdownlint
+- repo: git://github.com/antonbabenko/pre-commit-terraform
+  rev: v1.17.0
+  hooks:
+    - id: terraform_docs

@@ -1,0 +1,22 @@
+# terraform-aws-config [![Build Status](https://travis-ci.com/JamesWoolfenden/terraform-aws-config.svg?branch=master)](https://travis-ci.com/JamesWoolfenden/terraform-aws-config) [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-aws-config.svg)](https://github.com/JamesWoolfenden/terraform-aws-config/releases/latest)
+
+Terraform module to provision an AWS config.
+
+---
+
+## Usage
+
+Include this repository as a module in your existing terraform code:
+
+```hcl
+module "config" {
+  source     = "JamesWoolfenden/aws/config"
+  name       = "aws-config"
+  log_bucket = "config-logs"
+  common_tags= var.common_tags
+}
+```
+
+<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+I_WANT_TO_BE_REPLACED
+<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

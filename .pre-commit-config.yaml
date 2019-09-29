@@ -1,6 +1,6 @@
 repos:
 -   repo: git://github.com/pre-commit/pre-commit-hooks
-    rev: v2.2.3
+    rev: v2.3.0
     hooks:
     -   id: check-json
     -   id: check-merge-conflict
@@ -13,17 +13,17 @@ repos:
         - --autofix
     -   id: trailing-whitespace
 - repo: git://github.com/Lucas-C/pre-commit-hooks
-  rev: v1.1.6
+  rev: v1.1.7
   hooks:
   - id: forbid-tabs
-    exclude_types: [python, javascript, dtd, markdown, makefile]
+    exclude_types: [python, javascript, dtd, markdown, makefile, xml]
     exclude: binary|\.bin$
 - repo: git://github.com/kintoandar/pre-commit.git
   rev: v2.1.0
   hooks:
   - id: terraform_fmt
 - repo: https://github.com/pre-commit/pre-commit-hooks.git
-  rev: v2.2.3
+  rev: v2.3.0
   stages:
   - commit
   - push
@@ -34,11 +34,11 @@ repos:
   rev: 1.0.5
   hooks:
   - id: shell-lint
--   repo: git://github.com/igorshubovych/markdownlint-cli
-    rev: v0.17.0
-    hooks:
-    -   id: markdownlint
+- repo: git://github.com/igorshubovych/markdownlint-cli
+  rev: v0.18.0
+  hooks:
+  -   id: markdownlint
 - repo: git://github.com/antonbabenko/pre-commit-terraform
-  rev: v1.17.0
+  rev: v1.19.0
   hooks:
     - id: terraform_docs

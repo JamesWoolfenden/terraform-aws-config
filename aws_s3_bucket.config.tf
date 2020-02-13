@@ -2,8 +2,12 @@ resource "aws_s3_bucket" "config" {
   acl    = "log-delivery-write"
   bucket = local.config_name
 
+  versioning {
+    enabled = true
+  }
+
   lifecycle {
-    prevent_destroy = true
+    prevent_destroy = false
   }
 
   lifecycle_rule {
@@ -24,6 +28,16 @@ resource "aws_s3_bucket" "config" {
     target_bucket = var.log_bucket
     target_prefix = "s3/${local.config_name}/"
   }
+
+  server_side_encryption_configuration {
+    rule {
+      apply_server_side_encryption_by_default {
+        kms_master_key_id = aws_kms_key.s3.arn
+        sse_algorithm     = "aws:kms"
+      }
+    }
+  }
+
 
   tags = var.common_tags
 }

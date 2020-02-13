@@ -1,6 +1,6 @@
 resource "aws_config_delivery_channel" "config" {
   depends_on = [
-    "aws_config_configuration_recorder.config",
+    aws_config_configuration_recorder.config
   ]
 
   name           = var.name

@@ -5,13 +5,13 @@ repos:
     hooks:
     -   id: check-json
     -   id: check-merge-conflict
-    -   id: trailing-whitespace
     -   id: end-of-file-fixer
     -   id: check-yaml
     -   id: check-added-large-files
     -   id: pretty-format-json
         args:
         - --autofix
+    -   id: trailing-whitespace
     -   id: detect-aws-credentials
     -   id: detect-private-key
 - repo: git://github.com/Lucas-C/pre-commit-hooks

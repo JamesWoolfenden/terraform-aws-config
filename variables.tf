@@ -1,6 +1,6 @@
 variable "delivery_frequency" {
   default     = "TwentyFour_Hours"
-  description = "The frequency with which AWS Config recurringly delivers configuration snapshots. May be one of One_Hour, Three_Hours, Six_Hours, Twelve_Hours, or TwentyFour_Hours"
+  description = "The recurring frequency with which AWS Config delivers configuration snapshots. May be one of One_Hour, Three_Hours, Six_Hours, Twelve_Hours, or TwentyFour_Hours"
   type        = string
 }
 
@@ -42,7 +42,7 @@ PARAMS
   }
 
   description = "A map of strings in JSON format that is passed to the AWS Config rule Lambda function. The map is keyed by the rule names. This is merged with a map contained in locals, with the values supplied here overriding any default values."
-  type        = "map"
+  type        = map
 }
 
 variable "rules" {
@@ -58,7 +58,7 @@ variable "rules" {
   ]
 
   description = "The list of rules to enable in AWS Config. The names are identical to the ones used by AWS. These are used to name the rules and to refence into the input_parameters and source_idenitifers maps. The default is the minimum recommended list."
-  type        = "list"
+  type        = list
 }
 
 variable "rules_count" {

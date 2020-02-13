@@ -1,5 +1,6 @@
 locals {
-  config_name = "${var.name}-config"
+  config_name      = "${var.name}-config-${data.aws_caller_identity.current.account_id}"
+  config-role-name = "${var.name}-config-bucket-access"
 
   default_input_parameters = {
     acm-certificate-expiration-check = <<PARAMS

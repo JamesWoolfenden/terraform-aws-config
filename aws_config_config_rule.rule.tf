@@ -2,7 +2,7 @@ resource "aws_config_config_rule" "rule" {
   count = var.rules_count
 
   depends_on = [
-    "aws_config_configuration_recorder.config",
+    aws_config_configuration_recorder.config
   ]
 
   input_parameters = lookup(var.input_parameters, element(var.rules, count.index), "")

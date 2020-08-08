@@ -23,6 +23,10 @@ module "config" {
 ```
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Requirements
+
+No requirements.
+
 ## Providers
 
 | Name | Version |
@@ -32,7 +36,7 @@ module "config" {
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:-----:|
+|------|-------------|------|---------|:--------:|
 | common\_tags | A mapping of tags to assign to created resources | `map` | n/a | yes |
 | delivery\_frequency | The recurring frequency with which AWS Config delivers configuration snapshots. May be one of One\_Hour, Three\_Hours, Six\_Hours, Twelve\_Hours, or TwentyFour\_Hours | `string` | `"TwentyFour_Hours"` | no |
 | enable\_recorder | Whether the configuration recorder should be enabled or disabled. | `string` | `true` | no |

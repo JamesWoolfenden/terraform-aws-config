@@ -12,4 +12,6 @@ resource "aws_config_config_rule" "rule" {
     owner             = "AWS"
     source_identifier = lookup(local.source_identifiers, element(var.rules, count.index))
   }
+
+  tags = var.common_tags
 }

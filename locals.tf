@@ -94,7 +94,7 @@ PARAMS
     s3-bucket-versioning-enabled                            = "S3_BUCKET_VERSIONING_ENABLED"
   }
 
-  scopes             = "${merge(local.default_scopes, var.scopes)}"
-  source_identifiers = "${merge(local.default_source_identifiers, var.source_identifiers)}"
-  input_parameters   = "${merge(local.default_input_parameters, var.input_parameters)}"
+  scopes             = merge(local.default_scopes, var.scopes)
+  source_identifiers = merge(local.default_source_identifiers, var.source_identifiers)
+  input_parameters   = merge(local.default_input_parameters, var.input_parameters)
 }

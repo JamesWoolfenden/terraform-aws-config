@@ -42,7 +42,7 @@ PARAMS
   }
 
   description = "A map of strings in JSON format that is passed to the AWS Config rule Lambda function. The map is keyed by the rule names. This is merged with a map contained in locals, with the values supplied here overriding any default values."
-  type        = map
+  type        = map(any)
 }
 
 variable "rules" {
@@ -58,7 +58,7 @@ variable "rules" {
   ]
 
   description = "The list of rules to enable in AWS Config. The names are identical to the ones used by AWS. These are used to name the rules and to refence into the input_parameters and source_idenitifers maps. The default is the minimum recommended list."
-  type        = list
+  type        = list(any)
 }
 
 variable "rules_count" {
@@ -76,7 +76,7 @@ variable "scopes" {
   }
 
   description = "This is a map of rule names to scope maps. Each scope can have one or both of the following tuples: (compliance_resource_id, compliance_resource_types), (tag_key, tag_value). This map is merged with a default map in locals, with the values in this map overriding the defaults. Defines which resources can trigger an evaluation for the rules. If you do not specify a scope, evaluations are triggered when any resource in the recording group changes."
-  type        = map
+  type        = map(any)
 }
 
 variable "source_identifiers" {
@@ -144,12 +144,12 @@ variable "source_identifiers" {
   }
 
   description = "A map of rule names to source identifiers. For AWS Config managed rules, a predefined identifier from a list. For example, IAM_PASSWORD_POLICY is a managed rule. This map will be merged with a default list in locals, with values in this list overriding those in locals"
-  type        = map
+  type        = map(any)
 }
 
 variable "common_tags" {
   description = "A mapping of tags to assign to created resources"
-  type        = map
+  type        = map(any)
 }
 
 variable "transition_to_glacier" {

@@ -1,4 +1,5 @@
 resource "aws_s3_bucket" "config" {
+  # checkov:skip=CKV_AWS_144: doesn't need to replicated across regions
   acl    = "log-delivery-write"
   bucket = local.config_name
 

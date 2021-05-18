@@ -30,6 +30,7 @@ resource "aws_s3_bucket" "config" {
     target_prefix = "s3/${local.config_name}/"
   }
 
+/*
   server_side_encryption_configuration {
     rule {
       apply_server_side_encryption_by_default {
@@ -37,7 +38,7 @@ resource "aws_s3_bucket" "config" {
         sse_algorithm     = "aws:kms"
       }
     }
-  }
+  }*/
 
 
   tags = var.common_tags

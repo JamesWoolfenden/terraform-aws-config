@@ -26,6 +26,80 @@ module "config" {
 }
 ```
 
+## Costs
+
+```text
+monthly cost estimate
+
+Project: .
+
+ Name                                                        Monthly Qty  Unit                Monthly Cost
+
+ module.config.aws_config_config_rule.rule[0]
+ └─ Rule evaluations (first 100K)                        Cost depends on usage: $0.001 per evaluations
+
+ module.config.aws_config_config_rule.rule[1]
+ └─ Rule evaluations (first 100K)                        Cost depends on usage: $0.001 per evaluations
+
+ module.config.aws_config_config_rule.rule[2]
+ └─ Rule evaluations (first 100K)                        Cost depends on usage: $0.001 per evaluations
+
+ module.config.aws_config_config_rule.rule[3]
+ └─ Rule evaluations (first 100K)                        Cost depends on usage: $0.001 per evaluations
+
+ module.config.aws_config_config_rule.rule[4]
+ └─ Rule evaluations (first 100K)                        Cost depends on usage: $0.001 per evaluations
+
+ module.config.aws_config_config_rule.rule[5]
+ └─ Rule evaluations (first 100K)                        Cost depends on usage: $0.001 per evaluations
+
+ module.config.aws_config_config_rule.rule[6]
+ └─ Rule evaluations (first 100K)                        Cost depends on usage: $0.001 per evaluations
+
+ module.config.aws_config_config_rule.rule[7]
+ └─ Rule evaluations (first 100K)                        Cost depends on usage: $0.001 per evaluations
+
+ module.config.aws_config_configuration_recorder.config
+ ├─ Config items                                         Cost depends on usage: $0.003 per records
+ └─ Custom config items                                  Cost depends on usage: $0.003 per records
+
+ module.config.aws_kms_key.s3
+ ├─ Customer master key                                                1  months                     $1.00
+ ├─ Requests                                             Cost depends on usage: $0.03 per 10k requests
+ ├─ ECC GenerateDataKeyPair requests                     Cost depends on usage: $0.10 per 10k requests
+ └─ RSA GenerateDataKeyPair requests                     Cost depends on usage: $0.10 per 10k requests
+
+ module.config.aws_s3_bucket.config
+ ├─ Glacier
+ │  ├─ Storage                                           Cost depends on usage: $0.0045 per GB-months
+ │  ├─ PUT, COPY, POST, LIST requests                    Cost depends on usage: $0.03 per 1k requests
+ │  ├─ GET, SELECT, and all other requests               Cost depends on usage: $0.00042 per 1k requests
+ │  ├─ Lifecycle transition                              Cost depends on usage: $0.03 per 1k requests
+ │  ├─ Retrieval requests (standard)                     Cost depends on usage: $0.03 per 1k requests
+ │  ├─ Retrievals (standard)                             Cost depends on usage: $0.01 per GB-months
+ │  ├─ Select data scanned (standard)                    Cost depends on usage: $0.0084 per GB-months
+ │  ├─ Select data returned (standard)                   Cost depends on usage: $0.01 per GB-months
+ │  ├─ Retrieval requests (expedited)                    Cost depends on usage: $10.50 per 1k requests
+ │  ├─ Retrievals (expedited)                            Cost depends on usage: $0.03 per GB-months
+ │  ├─ Select data scanned (expedited)                   Cost depends on usage: $0.02 per GB-months
+ │  ├─ Select data returned (expedited)                  Cost depends on usage: $0.03 per GB-months
+ │  ├─ Retrieval requests (bulk)                         Cost depends on usage: $0.03 per 1k requests
+ │  ├─ Retrievals (bulk)                                 Cost depends on usage: $0.0026 per GB-months
+ │  ├─ Select data scanned (bulk)                        Cost depends on usage: $0.00104 per GB-months
+ │  ├─ Select data returned (bulk)                       Cost depends on usage: $0.0026 per GB-months
+ │  └─ Early delete (within 90 days)                     Cost depends on usage: $0.0045 per GB-months
+ └─ Standard
+    ├─ Storage                                           Cost depends on usage: $0.02 per GB-months
+    ├─ PUT, COPY, POST, LIST requests                    Cost depends on usage: $0.0053 per 1k requests
+    ├─ GET, SELECT, and all other requests               Cost depends on usage: $0.00042 per 1k requests
+    ├─ Select data scanned                               Cost depends on usage: $0.00225 per GB-months
+    └─ Select data returned                              Cost depends on usage: $0.0008 per GB-months
+
+ module.config.aws_sns_topic.config
+ └─ Requests                                             Cost depends on usage: $0.50 per 1M requests
+
+ PROJECT TOTAL                                                                                       $1.00
+```
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
@@ -55,6 +129,7 @@ No modules.
 | [aws_kms_key.s3](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/kms_key) | resource |
 | [aws_s3_bucket.config](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket) | resource |
 | [aws_s3_bucket_policy.config](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_policy) | resource |
+| [aws_s3_bucket_public_access_block.config](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_public_access_block) | resource |
 | [aws_sns_topic.config](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sns_topic) | resource |
 | [aws_caller_identity.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity) | data source |
 | [aws_iam_policy_document.assume_role](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |

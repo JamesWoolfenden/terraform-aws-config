@@ -27,6 +27,7 @@ variable "name" {
 }
 
 variable "input_parameters" {
+
   default = {
     iam-password-policy = <<PARAMS
 {
@@ -34,8 +35,11 @@ variable "input_parameters" {
   "RequireLowercaseCharacters": "true",
   "RequireSymbols": "true",
   "RequireNumbers": "true",
+  # checkov:skip=CKV_SECRET_6: ADD REASON
   "MinimumPasswordLength": "30",
+  # checkov:skip=CKV_SECRET_6: ADD REASON
   "PasswordReusePrevention": "24",
+  # checkov:skip=CKV_SECRET_6: ADD REASON
   "MaxPasswordAge": "30"
 }
 PARAMS
@@ -57,7 +61,7 @@ variable "rules" {
     "s3-bucket-ssl-requests-only",
   ]
 
-  description = "The list of rules to enable in AWS Config. The names are identical to the ones used by AWS. These are used to name the rules and to refence into the input_parameters and source_idenitifers maps. The default is the minimum recommended list."
+  description = "The list of rules to enable in AWS Config. The names are identical to the ones used by AWS. These are used to name the rules and to reference into the input_parameters and source_identifiers maps. The default is the minimum recommended list."
   type        = list(any)
 }
 
@@ -82,7 +86,7 @@ variable "scopes" {
 variable "source_identifiers" {
   default = {
     acm-certificate-expiration-check                        = "ACM_CERTIFICATE_EXPIRATION_CHECK"
-    aproved-amis-by-id                                      = "APPROVED_AMIS_BY_ID"
+    approved-amis-by-id                                     = "APPROVED_AMIS_BY_ID"
     approved-amis-by-tag                                    = "APPROVED_AMIS_BY_TAG"
     autoscaling-group-elb-healthcheck-required              = "AUTOSCALING_GROUP_ELB_HEALTHCHECK_REQUIRED"
     cloudformation-stack-notification-check                 = "CLOUDFORMATION_STACK_NOTIFICATION_CHECK"

@@ -35,11 +35,8 @@ variable "input_parameters" {
   "RequireLowercaseCharacters": "true",
   "RequireSymbols": "true",
   "RequireNumbers": "true",
-  # checkov:skip=CKV_SECRET_6: ADD REASON
   "MinimumPasswordLength": "30",
-  # checkov:skip=CKV_SECRET_6: ADD REASON
   "PasswordReusePrevention": "24",
-  # checkov:skip=CKV_SECRET_6: ADD REASON
   "MaxPasswordAge": "30"
 }
 PARAMS

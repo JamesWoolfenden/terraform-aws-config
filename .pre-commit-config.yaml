@@ -51,8 +51,8 @@ repos:
       - id: tf2docs
         language_version: python3.8
   - repo: git://github.com/bridgecrewio/checkov
-    rev: 2.0.495
+    rev: 2.0.540
     hooks:
       - id: checkov
         verbose: true
-        entry: checkov -d example/examplea --external-checks-dir checkov --soft-fail-on CKV_SECRET_6
+        entry: checkov -d example/examplea --external-checks-dir checkov

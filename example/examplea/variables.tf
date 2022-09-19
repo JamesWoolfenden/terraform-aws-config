@@ -8,7 +8,3 @@ variable "common_tags" {
 variable "name" {
   type = string
 }
-
-variable "log_bucket" {
-  type = string
-}

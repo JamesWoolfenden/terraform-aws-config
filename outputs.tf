@@ -32,3 +32,8 @@ output "topic_arn" {
   description = "The ARN of the SNS topic AWS Config writes events to."
   value       = aws_sns_topic.config.arn
 }
+
+
+output "kms_key" {
+  value = aws_kms_key.s3
+}

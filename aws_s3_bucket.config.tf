@@ -5,7 +5,7 @@ resource "aws_s3_bucket" "config" {
 
   versioning {
     enabled    = true
-    mfa_delete = true
+    mfa_delete = false
   }
 
   lifecycle {

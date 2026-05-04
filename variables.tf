@@ -3,29 +3,24 @@ variable "delivery_frequency" {
   description = "The recurring frequency with which AWS Config delivers configuration snapshots. May be one of One_Hour, Three_Hours, Six_Hours, Twelve_Hours, or TwentyFour_Hours"
   type        = string
 }
-
 variable "enable_recorder" {
   default     = true
   description = "Whether the configuration recorder should be enabled or disabled."
   type        = string
 }
-
 variable "expiration" {
   default     = 2555
   description = "The number of days to wait before expiring an object"
   type        = string
 }
-
 variable "log_bucket" {
   description = "The log bucket to write S3 logs to."
   type        = string
 }
-
 variable "name" {
   description = "The name to use when naming resources."
   type        = string
 }
-
 variable "input_parameters" {
 
   default = {
@@ -45,7 +40,6 @@ PARAMS
   description = "A map of strings in JSON format that is passed to the AWS Config rule Lambda function. The map is keyed by the rule names. This is merged with a map contained in locals, with the values supplied here overriding any default values."
   type        = map(any)
 }
-
 variable "rules" {
   default = [
     "cloudtrail-enabled",
@@ -61,13 +55,11 @@ variable "rules" {
   description = "The list of rules to enable in AWS Config. The names are identical to the ones used by AWS. These are used to name the rules and to reference into the input_parameters and source_identifiers maps. The default is the minimum recommended list."
   type        = list(any)
 }
-
 variable "rules_count" {
   default     = 8
   description = "The count of the items in the rules list"
   type        = string
 }
-
 variable "scopes" {
   default = {
     default = {
@@ -79,7 +71,6 @@ variable "scopes" {
   description = "This is a map of rule names to scope maps. Each scope can have one or both of the following tuples: (compliance_resource_id, compliance_resource_types), (tag_key, tag_value). This map is merged with a default map in locals, with the values in this map overriding the defaults. Defines which resources can trigger an evaluation for the rules. If you do not specify a scope, evaluations are triggered when any resource in the recording group changes."
   type        = map(any)
 }
-
 variable "source_identifiers" {
   default = {
     acm-certificate-expiration-check                        = "ACM_CERTIFICATE_EXPIRATION_CHECK"
@@ -147,12 +138,10 @@ variable "source_identifiers" {
   description = "A map of rule names to source identifiers. For AWS Config managed rules, a predefined identifier from a list. For example, IAM_PASSWORD_POLICY is a managed rule. This map will be merged with a default list in locals, with values in this list overriding those in locals"
   type        = map(any)
 }
-
 variable "common_tags" {
   description = "A mapping of tags to assign to created resources"
   type        = map(any)
 }
-
 variable "transition_to_glacier" {
   default     = 30
   description = "The number of days to wait before transitioning an object to Glacier"

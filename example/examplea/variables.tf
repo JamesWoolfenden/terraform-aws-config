@@ -4,7 +4,6 @@ variable "common_tags" {
     Name = "Security-config"
   }
 }
-
 variable "name" {
   type = string
 }

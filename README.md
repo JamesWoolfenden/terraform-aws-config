@@ -196,23 +196,10 @@ resource "aws_iam_policy" "terraform_pike" {
             "Sid": "VisualEditor0",
             "Effect": "Allow",
             "Action": [
-                "SNS:CreateTopic",
-                "SNS:DeleteTopic",
-                "SNS:GetTopicAttributes",
-                "SNS:ListTagsForResource",
-                "SNS:SetTopicAttributes",
-                "SNS:TagResource",
-                "SNS:UnTagResource"
-            ],
-            "Resource": "*"
-        },
-        {
-            "Sid": "VisualEditor1",
-            "Effect": "Allow",
-            "Action": [
                 "config:DeleteConfigRule",
                 "config:DeleteConfigurationRecorder",
                 "config:DeleteDeliveryChannel",
+                "config:DescribeComplianceByConfigRule",
                 "config:DescribeConfigRules",
                 "config:DescribeConfigurationRecorderStatus",
                 "config:DescribeConfigurationRecorders",
@@ -226,18 +213,22 @@ resource "aws_iam_policy" "terraform_pike" {
                 "config:TagResource",
                 "config:UntagResource"
             ],
-            "Resource": "*"
+            "Resource": [
+                "*"
+            ]
         },
         {
-            "Sid": "VisualEditor2",
+            "Sid": "VisualEditor1",
             "Effect": "Allow",
             "Action": [
                 "ec2:DescribeAccountAttributes"
             ],
-            "Resource": "*"
+            "Resource": [
+                "*"
+            ]
         },
         {
-            "Sid": "VisualEditor3",
+            "Sid": "VisualEditor2",
             "Effect": "Allow",
             "Action": [
                 "iam:AttachRolePolicy",
@@ -252,12 +243,15 @@ resource "aws_iam_policy" "terraform_pike" {
                 "iam:ListRolePolicies",
                 "iam:PassRole",
                 "iam:PutRolePolicy",
-                "iam:TagRole"
+                "iam:TagRole",
+                "iam:UntagRole"
             ],
-            "Resource": "*"
+            "Resource": [
+                "*"
+            ]
         },
         {
-            "Sid": "VisualEditor4",
+            "Sid": "VisualEditor3",
             "Effect": "Allow",
             "Action": [
                 "kms:CreateKey",
@@ -268,16 +262,20 @@ resource "aws_iam_policy" "terraform_pike" {
                 "kms:ListResourceTags",
                 "kms:ScheduleKeyDeletion",
                 "kms:TagResource",
-                "kms:UntagResource"
+                "kms:UntagResource",
+                "kms:UpdateKeyDescription"
             ],
-            "Resource": "*"
+            "Resource": [
+                "*"
+            ]
         },
         {
-            "Sid": "VisualEditor5",
+            "Sid": "VisualEditor4",
             "Effect": "Allow",
             "Action": [
                 "s3:CreateBucket",
                 "s3:DeleteBucket",
+                "s3:DeleteBucketPolicy",
                 "s3:GetAccelerateConfiguration",
                 "s3:GetBucketAcl",
                 "s3:GetBucketCORS",
@@ -296,9 +294,28 @@ resource "aws_iam_policy" "terraform_pike" {
                 "s3:GetReplicationConfiguration",
                 "s3:ListBucket",
                 "s3:PutBucketPolicy",
-                "s3:PutBucketPublicAccessBlock"
+                "s3:PutBucketPublicAccessBlock",
+                "s3:PutBucketTagging"
             ],
-            "Resource": "*"
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Sid": "VisualEditor5",
+            "Effect": "Allow",
+            "Action": [
+                "sns:CreateTopic",
+                "sns:DeleteTopic",
+                "sns:GetTopicAttributes",
+                "sns:ListTagsForResource",
+                "sns:SetTopicAttributes",
+                "sns:TagResource",
+                "sns:UnTagResource"
+            ],
+            "Resource": [
+                "*"
+            ]
         }
     ]
 })

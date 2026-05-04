@@ -1,4 +1,6 @@
 resource "aws_s3_bucket" "config" {
+  # checkov:skip=CKV2_AWS_61: Lifecycle configuration not required for this bucket
+  # checkov:skip=CKV2_AWS_62: Event notifications not required for this bucket
   # checkov:skip=CKV_AWS_144: doesn't need to replicated across regions
   acl    = "log-delivery-write"
   bucket = local.config_name

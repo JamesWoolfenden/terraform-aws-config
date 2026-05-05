@@ -1,6 +1,6 @@
 # terraform-aws-config
 
-[![Build Status](https://github.com/JamesWoolfenden/terraform-aws-config/workflows/Verify%20and%20Bump/badge.svg?branch=master)](https://github.com/JamesWoolfenden/terraform-aws-config)
+[![Build Status](https://github.com/JamesWoolfenden/terraform-aws-config/workflows/Verify/badge.svg?branch=main)](https://github.com/JamesWoolfenden/terraform-aws-config)
 [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-aws-config.svg)](https://github.com/JamesWoolfenden/terraform-aws-config/releases/latest)
 [![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/JamesWoolfenden/terraform-aws-config.svg?label=latest)](https://github.com/JamesWoolfenden/terraform-aws-config/releases/latest)
 ![Terraform Version](https://img.shields.io/badge/tf-%3E%3D0.14.0-blue.svg)
